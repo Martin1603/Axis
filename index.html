@@ -34,13 +34,12 @@
   </header>
 
   <!-- ====== MENÚ DE NAVEGACIÓN ====== -->
-  <!-- En móvil: oculto; en desktop: visible. En móvil se abre con ☰ -->
   <nav class="fila navegacion" id="navegacion">
     <div class="col-lg-12 col-xs-12">
       <ul class="menu">
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Colecciones</a></li>
-        <li><a href="#">Lookbook</a></li>
+        <li><a href="lookbook.html" target="_blank" rel="noopener noreferrer">Lookbook</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Nosotros</a></li>
         <li><a href="#">Contacto</a></li>
@@ -61,17 +60,18 @@
   <section class="fila">
     <div class="col-lg-12 col-xs-12">
       <div class="hero">
-        <div class="hero-capa"></div> <!-- capa oscura para legibilidad -->
+        <div class="hero-capa"></div>
         <div class="hero-contenido">
           <h1 class="hero-titulo">Nueva cápsula</h1>
           <p class="hero-texto">Prendas esenciales. Siluetas amplias. Actitud urbana.</p>
-          <a href="#productos" class="boton boton-primario">Comprar ahora</a>
+          <!-- Abre en nueva pestaña -->
+          <a href="#productos" class="boton boton-primario" target="_blank" rel="noopener noreferrer">Comprar ahora</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== CATEGORÍAS (chips con scroll horizontal) ====== -->
+  <!-- ====== CATEGORÍAS ====== -->
   <nav class="fila categorias">
     <div class="col-lg-12 col-xs-12">
       <ul class="chips">
@@ -85,10 +85,10 @@
     </div>
   </nav>
 
-  <!-- ====== PRODUCTOS (4 en desktop / 2×2 en móvil) ====== -->
+  <!-- ====== PRODUCTOS ====== -->
   <main class="fila" id="productos">
     <article class="col-lg-3 col-xs-6">
-      <a class="tarjeta" href="#">
+      <a class="tarjeta" href="images/modelo2.png" target="_blank">
         <div class="tarjeta-foto" style="background-image:url('images/modelo2.png');"></div>
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo">Sweater Axis Crudo</h3>
@@ -98,7 +98,7 @@
     </article>
 
     <article class="col-lg-3 col-xs-6">
-      <a class="tarjeta" href="#">
+      <a class="tarjeta" href="images/modelo3.png" target="_blank">
         <div class="tarjeta-foto" style="background-image:url('images/modelo3.png');"></div>
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo">Hoodie Oliva</h3>
@@ -108,7 +108,7 @@
     </article>
 
     <article class="col-lg-3 col-xs-6">
-      <a class="tarjeta" href="#">
+      <a class="tarjeta" href="images/modelo4.png" target="_blank">
         <div class="tarjeta-foto" style="background-image:url('images/modelo4.png');"></div>
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo">Hoodie Carbón</h3>
@@ -118,7 +118,7 @@
     </article>
 
     <article class="col-lg-3 col-xs-6">
-      <a class="tarjeta" href="#">
+      <a class="tarjeta" href="images/modelo5.png" target="_blank">
         <div class="tarjeta-foto" style="background-image:url('images/modelo5.png');"></div>
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo">Denim Wide Leg</h3>
@@ -162,7 +162,7 @@
 
 </div><!-- /contenedor -->
 
-<!-- Tu JS -->
+<!-- JS -->
 <script src="js/script.js"></script>
 </body>
 </html>
