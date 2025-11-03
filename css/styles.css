@@ -177,7 +177,7 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   height:420px;                                /* Alto fijo sencillo */
   border-radius:18px;
   overflow:hidden;                             /* Oculta desbordes de la imagen */
-  background-image:url("../images/fondo1.jpg");/* Cambia por tu imagen */
+  background-image:url("../images/logo.jpeg");/* Cambia por tu imagen */
   background-size:cover;                       /* Cubre el espacio */
   background-position:center;                  /* Centrada por defecto */
 }
