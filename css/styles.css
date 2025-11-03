@@ -70,6 +70,21 @@
     .col-sm-3{width: 25%;}
     .col-sm-2{width: 16.66666667%;}
     .col-sm-1{width: 8.33333333%;}
+
+    .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+  }
+
+  .menu li {
+    flex: 0 0 25%; /* cada uno ocupa el 25% del ancho = 4 por fila */
+    text-align: center;
+  }
+
+  /* Esta parte utilizo chat, para permitir que el nav se dividiera en 2 lineas, permitiendo que en pantallas pequeñas tenga una visibilidad mas limpia*/
 }
 
 /*PANTALLAS EXTRAPEQUEÑAS - xs*/
@@ -97,8 +112,8 @@ nav{
     font-size: 25px;
     cursor: pointer;
     padding: 10px;
-    background: lightblue;
-    color: navy;
+    background: #BEB7A4;
+    color: #FFFFFF;
     display: none;
 }
 
@@ -106,7 +121,7 @@ nav{
     list-style: none;
     display: flex;
     justify-content: space-around;
-    background: lightskyblue;
+    background: #BEB7A4;
 }
 
 .menu li{
@@ -114,7 +129,7 @@ nav{
 }
 
 .menu li a{
-    color: navy;
+    color: #FFFFFF;
     text-decoration: none;
     display: block;
 }
@@ -138,7 +153,45 @@ nav{
     }
     .menu li{
         text-align: center;
-        background: lightblue;
-        border-bottom: 1px solid navy;
+        background: #BEB7A4;
+        border-bottom: 1px solid #FFFFFF;
     }
+}
+/* slide */
+
+.Slide{
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+}
+.Slide ul{
+	display: flex;
+	width: 500%;
+	padding: 0px;
+	animation: movimiento 20s infinite;
+	animation-direction: alternate-reverse;
+}
+.Slide ul li{
+	width: 100%;
+	list-style: none;
+}
+.Slide ul li img{
+	width: 100%;
+	height: 300px;
+}
+@keyframes movimiento{
+	0%{margin-left: 0%;}
+	15%{margin-left: 0%;}
+
+	20%{margin-left: -100%;}
+	35%{margin-left: -100%;}
+
+	40%{margin-left: -200%;}
+	55%{margin-left: -200%;}
+
+	60%{margin-left: -300%;}
+	75%{margin-left: -300%;}
+
+	80%{margin-left: -400%;}
+	95%{margin-left: -400%;}
 }
