@@ -122,3 +122,12 @@ window.onclick = function(e) {
     }
   });
 };
+
+// ====== FUNCIONALIDAD FAQ ======
+document.querySelectorAll('.faq-pregunta').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    item.classList.toggle('activo');
+  });
+});
+
