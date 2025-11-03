@@ -82,6 +82,51 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
     .col-md-1{width: 8.33333333%;}
 }
 
+@media (min-width: 576px) and (max-width: 991px) {
+  .col-sm-12 { width: 100%; }
+  .col-sm-6  { width: 50%; } /* dos columnas en small */
+  /* por si usas otras clases sm */
+  .col-sm-4  { width: 33.3333%; }
+  .col-sm-3  { width: 25%; }
+}
+
+/* Extra-small: <=575px -> todas las columnas ocupan 100% (apiladas) */
+@media (max-width: 575px) {
+  /* Forzar que TODAS las "col-" ocupen 100% para evitar problemas de float */
+  [class*="col-"] {
+    width: 100% !important;
+  }
+}
+
+/* ===== Slider de noticias: mostrar / ocultar slides correctamente ===== */
+/* Reemplaza la lógica de opacity por display para evitar "espacios en blanco" */
+.blog-slider .slider { display:block; position:relative; }
+.blog-slider .slide {
+  display: none;               /* ocultas por defecto (no ocupan espacio) */
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 12px;
+  background: #f8f8f8;
+}
+.blog-slider .slide.activo {
+  display: block;              /* sólo la activa ocupa espacio y se ve */
+  animation: fadeIn 0.35s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste: altura automática para evitar huecos si contenido variable */
+.blog-slider .slider { min-height: 1px; }
+
+/* (Opcional) Asegura que controles no se solapen en móvil */
+@media (max-width: 575px) {
+  .slider-controles { top: auto; bottom: 8px; transform: none; }
+  .boton-slider { width: 40px; height: 40px; }
+}
+
 /* En móvil, la columna derecha (vacía) se oculta para ahorrar espacio */
 .xs-oculto{display:block}
 @media (max-width:768px){

@@ -32,6 +32,42 @@ if (btnBuscar && buscador){
   };
 }
 
+/* ===== SLIDER DE NOTICIAS (mejorado) ===== */
+(function(){
+  let indice = 0;
+  const slides = Array.from(document.querySelectorAll('.blog-slider .slide'));
+  const prevBtn = document.querySelector('.blog-slider .prev');
+  const nextBtn = document.querySelector('.blog-slider .next');
+
+  if (!slides.length) return; // nada que hacer
+
+  function mostrarSlide(i) {
+    // normalizar índice
+    indice = (i + slides.length) % slides.length;
+    slides.forEach((s, idx) => {
+      s.classList.toggle('activo', idx === indice);
+    });
+  }
+
+  // eventos botones (si existen)
+  if (prevBtn) prevBtn.addEventListener('click', () => mostrarSlide(indice - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => mostrarSlide(indice + 1));
+
+  // autoplay (puedes quitar o cambiar tiempo)
+  const INTERVAL = 5000;
+  let autoplay = setInterval(() => mostrarSlide(indice + 1), INTERVAL);
+
+  // pausar autoplay al entrar con el mouse y reanudar al salir (opcional)
+  const sliderWrap = document.querySelector('.blog-slider');
+  if (sliderWrap) {
+    sliderWrap.addEventListener('mouseenter', () => clearInterval(autoplay));
+    sliderWrap.addEventListener('mouseleave', () => autoplay = setInterval(() => mostrarSlide(indice + 1), INTERVAL));
+  }
+
+  // mostrar la primera al inicio
+  mostrarSlide(0);
+})();
+
 /* ====== SLIDER DE NOTICIAS ====== */
 let indice = 0;
 const slides = document.querySelectorAll('.slide');
