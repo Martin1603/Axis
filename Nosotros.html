@@ -1,40 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<title>Axis</title>
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nosotros</title>
 
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Fuente (opcional para look moderno, puedes quitarla si quieres) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
-	<div class="contenedor">
-		<header class="fila Slide">
-			<ul>
-				<li><img src="images/slide1.png"></li>
-				<li><img src="images/slide2.png"></li>
-				<li><img src="images/slide2.png"></li>
-				<li><img src="images/slide2.png"></li>
-				<li><img src="images/slide2.png"></li>
-			</ul>
-		</header>
-		
-		<nav class="fila">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                <input type="checkbox" id="menu-toggle">
-                <labeL for="menu-toggle" class="menu-icono">&#9776;</label>
-                <ul class="menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="colecciones.html">Colecciones</a></li>
-                    <li><a href="lookbook.html">LookBook</a></li>
-                    <li><a href="Blog.html">Blog</a></li>
-                    <li><a href="Nosotros.html">Nosotros</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="FAQ.html">FAQ</a></li>
-                    <li><a href="Terminos.html">Términos y condiciones</a></li>
-                </ul>
-            </div>
-        </nav>
-	</div>
+
+<!-- Contenedor general, respeta tu grid de 12 columnas con floats -->
+<div class="contenedor">
+
+  <!-- ====== ENCABEZADO / NAV SUPERIOR ====== -->
+  <header class="fila navbar">
+    <!-- Columna izquierda: carrito + menú (☰) + lupa (🔍) -->
+    <div class="col-lg-3 col-xs-6 nav-izq">
+      <button class="icono" id="btnMenu" aria-label="Menú">☰</button>
+      <button class="icono" id="btnBuscar" aria-label="Buscar">🔍</button>
+    </div>
+
+    <!-- Columna centro: marca (centrada por text-align center) -->
+    <div class="col-lg-6 col-xs-12 nav-centro">
+      <a href="#" class="marca">axis</a>
+    </div>
+
+    <!-- Columna derecha vacía: equilibra visualmente en desktop -->
+    <div class="col-lg-3 col-xs-6 nav-der xs-oculto"></div>
+  </header>
+
+  <!-- ====== MENÚ DE NAVEGACIÓN CENTRADO ====== -->
+  <!-- En móvil se oculta por CSS y se muestra con JS al pulsar ☰ -->
+  <nav class="fila navegacion" id="navegacion">
+    <div class="col-lg-12 col-xs-12">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="colecciones.html">Colecciones</a></li>
+        <li><a href="lookbook.html">Lookbook</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="tycondiciones.html">TyC</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ====== BARRA DE BÚSQUEDA (se muestra/oculta con JS) ====== -->
+  <section class="fila buscador" id="buscador">
+    <div class="col-lg-12 col-xs-12">
+      <input class="entrada" type="search" placeholder="Buscar productos, categorías…" />
+    </div>
+  </section>
+
+  	<section class="fila nosotros">
+	  <div class="col-lg-6 col-xs-12 nosotros-texto">
+		    <h2>Sobre Nosotros</h2>
+		    <p>
+		      En <strong>Axis</strong> creemos en una moda que se mueve contigo. 
+		      Nacimos con la idea de crear ropa moderna, cómoda y versátil para quienes buscan 
+		      expresarse sin límites. Nuestro equipo diseña cada prenda con atención al detalle, 
+		      fusionando estilo urbano con materiales de calidad.
+		    </p>
+		    <p>
+		      Apostamos por la producción responsable, las ediciones limitadas y un enfoque 
+		      consciente hacia la moda. Nos inspira la ciudad, la música y las nuevas generaciones 
+		      que transforman cada espacio en una pasarela.
+		    </p>
+		    <a href="#colecciones" class="boton boton-primario">Ver colecciones</a>
+		</div>
+		<div class="col-lg-6 col-xs-12 nosotros-imagen">
+			<a href="images/axis.png" target="_blank">
+	    		<img src="images/axis.png">
+	    	</a>
+	  	</div>
+	</section>
+<!-- ====== SECCIÓN CREADORES ====== -->
+	<section class="fila creadores">
+	  <div class="col-lg-12">
+	    <h2>Conoce a los Creadores</h2>
+	  </div>
+
+	  <!-- CREADOR 1 -->
+	  <div class="fila creador">
+		    <div class="col-lg-4 col-md-4 col-xs-12 creador-img">
+		      <img src="images/axis.png">
+		    </div>
+		    <div class="col-lg-8 col-md-8 col-xs-12 creador-texto">
+		      <h3>Santiago Hernández</h3>
+		      <p>
+		        Diseñador y visionario detrás de la identidad estética de Axis. 
+		        Apasionado por la moda urbana y el diseño experimental, fusiona 
+		        la creatividad con la funcionalidad en cada prenda.
+		      </p>
+		    </div>
+	  </div>
+
+	  <!-- CREADOR 2 -->
+	  <div class="fila creador">
+		    <div class="col-lg-4 col-md-4 col-xs-12 creador-img">
+		      <img src="images/creador2.jpg" alt="Foto de creador 2">
+		    </div>
+		    <div class="col-lg-8 col-md-8 col-xs-12 creador-texto">
+		      <h3>Hedwins Bermúdez</h3>
+		      <p>
+		        Encargada de la dirección creativa y comunicación visual. 
+		        Su enfoque está en crear experiencias que conecten la moda 
+		        con la autenticidad y la autoexpresión.
+		      </p>
+		    </div>
+	  </div>
+
+	  <!-- CREADOR 3 -->
+	  <div class="fila creador">
+		    <div class="col-lg-4 col-md-4 col-xs-12 creador-img">
+		      <img src="images/creador3.jpg" alt="Foto de creador 3">
+		    </div>
+		    <div class="col-lg-8 col-md-8 col-xs-12 creador-texto">
+		      <h3>Martín Caro</h3>
+		      <p>
+		        Responsable de producción y logística. 
+		        Garantiza que cada pieza de Axis mantenga los estándares de 
+		        calidad y sostenibilidad que definen nuestra marca.
+		      </p>
+		    </div>
+	  </div>
+	</section>
+
+  <!-- ====== PIE DE PÁGINA ====== -->
+  <footer class="fila pie">
+	    <div class="col-lg-4 col-xs-12">
+	      <h4>Axis</h4>
+	      <p>Ropa juvenil y moderna. Diseñada para moverse contigo.</p>
+	    </div>
+	    <div class="col-lg-4 col-xs-12">
+	      <h4>Ayuda</h4>
+	      <ul class="lista">
+	        <li><a href="#">Envíos</a></li>
+	        <li><a href="#">Cambios y devoluciones</a></li>
+	        <li><a href="#">Términos</a></li>
+	      </ul>
+	    </div>
+	    <div class="col-lg-4 col-xs-12">
+	      <h4>Suscríbete</h4>
+	      <form class="boletin">
+	        <input type="email" class="entrada" placeholder="Tu email" />
+	        <button class="boton">Unirme</button>
+	      </form>
+	    </div>
+  </footer>
+</div><!-- /contenedor -->
+
+<!-- Conectamos tu JS (carpeta js/script.js) -->
+<script src="js/script.js"></script>
 </body>
 </html>

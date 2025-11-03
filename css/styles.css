@@ -31,6 +31,21 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   .col-lg-1{width:8.3333%}
 }
 
+@media (max-width: 1199px) and (min-width: 992px){
+  .col-md-12{width:100%}
+  .col-md-11{width:91.6666%}
+  .col-md-10{width:83.3333%}
+  .col-md-9{width:75%}
+  .col-md-8{width:66.6666%}
+  .col-md-7{width:58.3333%}
+  .col-md-6{width:50%}
+  .col-md-5{width:41.6666%}
+  .col-md-4{width:33.3333%}
+  .col-md-3{width:25%}
+  .col-md-2{width:16.6666%}
+  .col-md-1{width:8.3333%}
+}
+
 @media (max-width:768px){
   .col-xs-12{width:100%}
   .col-xs-6{width:50%} /* 2 productos por fila en móvil */
@@ -259,7 +274,7 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
     width: 500%;
     padding: 0px;
     animation: movimiento 20s infinite;
-    animation-direction: alternate-reverse;
+    animation-direction: alternate;
 }
 .Slide ul li{
     width: 100%;
@@ -475,6 +490,181 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   to {transform: translateY(0); opacity: 1;}
 }
 
+
+/* ====== SECCIÓN NOSOTROS ====== */
+.nosotros {
+  margin: 80px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nosotros-texto {
+  padding: 30px;
+}
+
+.nosotros-texto h2 {
+  font-size: 36px;
+  font-weight: 800; /* Da grosor a la letra */
+  margin-bottom: 14px;
+  text-transform: uppercase; /* todo texto con este valor se convierte en mayiscula*/
+  letter-spacing: 1px; /* es el espacio que hay entre cada letra */
+}
+
+.nosotros-texto p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6; /* genera un tamaño de linea, haciendo que haya mas espacio entre renglones*/
+  margin-bottom: 14px;
+}
+
+.nosotros-imagen img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+
+.nosotros-imagen img:hover {
+  transform: scale(1.03);
+}
+
+/* ====== SECCIÓN CREADORES ====== */
+.creadores {
+  margin: 100px 0;
+  text-align: center;
+}
+
+.creadores h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.creador {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.creador-img img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.creador-texto h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.creador-texto p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .creador {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .creador-img img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nosotros {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nosotros-texto {
+    padding: 10px 0;
+  }
+  .nosotros-texto h2 {
+    font-size: 28px;
+  }
+
+  .creadores h2 {
+    font-size: 28px;
+  }
+}
+
+/* ========= SECCIÓN FAQ ========= */
+.faq {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faq-titulo {
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.faq-descripcion {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Cada ítem del FAQ */
+.faq-item {
+  margin-bottom: 14px;
+}
+
+/* Botón con la pregunta */
+.faq-pregunta {
+  width: 100%;
+  background: #f7f7f7;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  text-align: left;
+  padding: 14px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faq-pregunta:hover {
+  background: #efefef;
+}
+
+/* Contenedor de la respuesta */
+.faq-respuesta {
+  display: none;
+  background: #fff;
+  border-left: 3px solid #0b0b0b;
+  margin-top: 4px;
+  padding: 12px 16px;
+  border-radius: 0 0 10px 10px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Cuando está activa */
+.faq-item.activo .faq-respuesta {
+  display: block;
+}
+
+
 /* PAGINA DE CONTACTO HEDWINS  */
 
 .contacto {
@@ -579,3 +769,5 @@ ordenen en forma de columna, o sea, vertical */
 
 /* Fin clases Hedwins */
 >>>>>>> origin/martin
+
+
