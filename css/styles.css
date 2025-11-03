@@ -9,14 +9,13 @@ body{
 }
 a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
 
-/* ========= SISTEMA DE GRID (12 columnas con floats) ========= */
-/* Este es el sistema que te enseñó tu profe */
+
 .contenedor{position:relative;margin:auto;width:95%}
 .fila{position:relative;margin:auto;width:100%}
 .fila:after{content:"";display:block;clear:both}     /* Limpieza de floats */
 [class*="col-"]{float:left;padding:10px}             /* Columnas con padding */
 
-/* Anchos para pantallas grandes (desktop) */
+
 @media (min-width:1200px){
   .col-lg-12{width:100%}
   .col-lg-11{width:91.6666%}
@@ -32,14 +31,12 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   .col-lg-1{width:8.3333%}
 }
 
-/* Anchos para pantallas pequeñas (móvil) */
 @media (max-width:768px){
   .col-xs-12{width:100%}
   .col-xs-6{width:50%} /* 2 productos por fila en móvil */
 }
 
 /* ========= NAV SUPERIOR ========= */
-/* Barra de arriba: borde sutil y espacio */
 .navbar{
   border-bottom:1px solid #efefef;
   padding:8px 0;
@@ -66,20 +63,50 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   font-size:28px;
   text-transform:lowercase;
 }
-/*PANTALLAS MEDIANAS - md*/
-@media(max-width: 1199px) and (min-width: 992px){
-    .col-md-12{width: 100%;}
-    .col-md-11{width: 91.66666667%;}
-    .col-md-10{width: 83.33333333%;}
-    .col-md-9{width: 75%;}
-    .col-md-8{width: 66.66666667%;}
-    .col-md-7{width: 58.33333333%;}
-    .col-md-6{width: 50%;}
-    .col-md-5{width: 41.66666667%;}
-    .col-md-4{width: 33.33333333%;}
-    .col-md-3{width: 25%;}
-    .col-md-2{width: 16.66666667%;}
-    .col-md-1{width: 8.33333333%;}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .col-sm-12 { width: 100%; }
+  .col-sm-6  { width: 50%; } /* dos columnas en small */
+  /* por si usas otras clases sm */
+  .col-sm-4  { width: 33.3333%; }
+  .col-sm-3  { width: 25%; }
+}
+
+/* Extra-small: <=575px -> todas las columnas ocupan 100% (apiladas) */
+@media (max-width: 575px) {
+  /* Forzar que TODAS las "col-" ocupen 100% para evitar problemas de float */
+  [class*="col-"] {
+    width: 100% !important;
+  }
+}
+
+/* ===== Slider de noticias: mostrar / ocultar slides correctamente ===== */
+/* Reemplaza la lógica de opacity por display para evitar "espacios en blanco" */
+.blog-slider .slider { display:block; position:relative; }
+.blog-slider .slide {
+  display: none;               /* ocultas por defecto (no ocupan espacio) */
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 12px;
+  background: #f8f8f8;
+}
+.blog-slider .slide.activo {
+  display: block;              /* sólo la activa ocupa espacio y se ve */
+  animation: fadeIn 0.35s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste: altura automática para evitar huecos si contenido variable */
+.blog-slider .slider { min-height: 1px; }
+
+/* (Opcional) Asegura que controles no se solapen en móvil */
+@media (max-width: 575px) {
+  .slider-controles { top: auto; bottom: 8px; transform: none; }
+  .boton-slider { width: 40px; height: 40px; }
 }
 
 /* En móvil, la columna derecha (vacía) se oculta para ahorrar espacio */
@@ -180,10 +207,8 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
 .chip.activo{background:#0b0b0b;color:#fff;border-color:#0b0b0b}
 
 /* ========= TARJETAS DE PRODUCTO ========= */
-/* 4 por fila en desktop (col-lg-3) y 2 por fila en móvil (col-xs-6) */
 #productos [class*="col-"]{padding:10px}
 
-/* Tarjeta simple con borde y fondo blanco */
 .tarjeta{
   display:block;
   border:1px solid #efefef;
@@ -192,9 +217,7 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   overflow:hidden;
 }
 
-/* FOTO DE PRODUCTO: 
-   - Aumentamos la altura a 460px para que se vea más del cuerpo
-   - Alineamos la imagen desde ARRIBA para no cortar la cabeza (top center) */
+/* FOTO DE PRODUCTO: */ 
 .tarjeta-foto{
   height:460px;                    /* << más alto que antes */
   background-size:cover;           /* Ajusta sin deformar */
@@ -223,7 +246,234 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
 .lista{list-style:none}
 .lista li+li{margin-top:6px}
 .boletin .entrada{width:auto;min-width:180px}
+<<<<<<< HEAD
+=======
 
+.Slide{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.Slide ul{
+    display: flex;
+    width: 500%;
+    padding: 0px;
+    animation: movimiento 20s infinite;
+    animation-direction: alternate-reverse;
+}
+.Slide ul li{
+    width: 100%;
+    list-style: none;
+}
+.Slide ul li img{
+    width: 100%;
+    height: 300px;
+}
+@keyframes movimiento{
+    0%{margin-left: 0%;}
+    15%{margin-left: 0%;}
+
+    20%{margin-left: -100%;}
+    35%{margin-left: -100%;}
+
+    40%{margin-left: -200%;}
+    55%{margin-left: -200%;}
+
+    60%{margin-left: -300%;}
+    75%{margin-left: -300%;}
+
+    80%{margin-left: -400%;}
+    95%{margin-left: -400%;}
+}
+
+ /* ====== LOOKBOOK santi ====== */
+
+/* Encabezado simple */
+.lookbook-encabezado { margin-top: 14px; }
+.look-titulo{
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.look-texto{
+  color:#444;
+  font-size:14px;
+}
+
+/* Filtros: reutilizamos chips; solo ajusto separación */
+.lookbook-filtros { margin-top: 8px; }
+.lookbook-filtros .chips { padding: 4px 6px; }
+
+/* Galería */
+.lookbook-galeria { margin-top: 8px; }
+
+/* Tarjeta del look (sin cambiar tus tarjetas de producto) */
+.look-card{
+  display:block;
+  border:1px solid #efefef;
+  border-radius:16px;
+  background:#fff;
+  overflow:hidden;
+}
+
+/* Foto del look: similar a producto, un poco más alta */
+.look-foto{
+  height:520px;                 /* alto generoso para ver el outfit completo */
+  background-size:cover;
+  background-position:center;   /* puedes usar top center si tu foto lo requiere */
+  background-color:#f3f3f3;
+}
+
+/* Info del look: título y etiquetas */
+.look-info{ padding:12px }
+.look-nombre{ font-size:14px; font-weight:700; margin-bottom:4px }
+.look-etiquetas{ font-size:12px; color:#666 }
+
+/* Estado oculto por filtro (simple) */
+.look-oculto{ display:none !important }
+
+
+/* MARTIN */
+
+.blog {
+  margin-top: 40px;
+  text-align: center;
+}
+.blog-titulo {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.blog-descripcion {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ====== Tarjetas de blog ====== */
+.blog-card {
+  height: 260px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #eaeaea;
+  transition: transform 0.3s ease;
+}
+.blog-card:hover {
+  transform: scale(1.03);
+}
+
+/* ====== SLIDER DE NOTICIAS ====== */
+.blog-slider {
+  position: relative;
+  margin-top: 40px;
+  overflow: hidden;
+}
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 30px 20px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.slide.activo {
+  opacity: 1;
+  transform: scale(1);
+}
+.slide h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.slide p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* ====== Botones del slider ====== */
+.slider-controles {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.boton-slider {
+  pointer-events: all;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.boton-slider:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* ====== MODALES ====== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 90px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-contenido {
+  background-color: #fff;
+  margin: auto;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  animation: aparecer 0.3s ease;
+}
+.modal-contenido h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.modal-contenido p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.cerrar {
+  color: #aaa;
+  float: right;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cerrar:hover {
+  color: #000;
+}
+@keyframes aparecer {
+  from {transform: translateY(-20px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
 
 /* PAGINA DE CONTACTO HEDWINS  */
 
@@ -328,3 +578,4 @@ ordenen en forma de columna, o sea, vertical */
 
 
 /* Fin clases Hedwins */
+>>>>>>> origin/martin

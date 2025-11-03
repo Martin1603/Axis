@@ -31,3 +31,136 @@ if (btnBuscar && buscador){
     }
   };
 }
+
+/* ===== SLIDER DE NOTICIAS (mejorado) ===== */
+(function(){
+  let indice = 0;
+  const slides = Array.from(document.querySelectorAll('.blog-slider .slide'));
+  const prevBtn = document.querySelector('.blog-slider .prev');
+  const nextBtn = document.querySelector('.blog-slider .next');
+
+  if (!slides.length) return; // nada que hacer
+
+  function mostrarSlide(i) {
+    // normalizar índice
+    indice = (i + slides.length) % slides.length;
+    slides.forEach((s, idx) => {
+      s.classList.toggle('activo', idx === indice);
+    });
+  }
+
+  // eventos botones (si existen)
+  if (prevBtn) prevBtn.addEventListener('click', () => mostrarSlide(indice - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => mostrarSlide(indice + 1));
+
+  // autoplay (puedes quitar o cambiar tiempo)
+  const INTERVAL = 5000;
+  let autoplay = setInterval(() => mostrarSlide(indice + 1), INTERVAL);
+
+  // pausar autoplay al entrar con el mouse y reanudar al salir (opcional)
+  const sliderWrap = document.querySelector('.blog-slider');
+  if (sliderWrap) {
+    sliderWrap.addEventListener('mouseenter', () => clearInterval(autoplay));
+    sliderWrap.addEventListener('mouseleave', () => autoplay = setInterval(() => mostrarSlide(indice + 1), INTERVAL));
+  }
+
+  // mostrar la primera al inicio
+  mostrarSlide(0);
+})();
+
+/* ====== SLIDER DE NOTICIAS ====== */
+let indice = 0;
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+function mostrarSlide(index) {
+  slides.forEach((s, i) => {
+    s.classList.toggle('activo', i === index);
+  });
+}
+
+// Botones de navegación
+if (prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => {
+    indice = (indice - 1 + slides.length) % slides.length;
+    mostrarSlide(indice);
+  });
+  nextBtn.addEventListener('click', () => {
+    indice = (indice + 1) % slides.length;
+    mostrarSlide(indice);
+  });
+}
+
+// Avance automático cada 5 segundos
+setInterval(() => {
+  indice = (indice + 1) % slides.length;
+  mostrarSlide(indice);
+}, 5000);
+
+// Mostrar primero
+mostrarSlide(indice);
+
+
+/* ====== MODALES ====== */
+function abrirModal(num) {
+  const modal = document.getElementById(`modal${num}`);
+  if (modal) modal.style.display = "block";
+}
+
+function cerrarModal(num) {
+  const modal = document.getElementById(`modal${num}`);
+  if (modal) modal.style.display = "none";
+}
+
+// Cerrar modal al hacer clic fuera
+window.onclick = function(e) {
+  const modales = document.querySelectorAll('.modal');
+  modales.forEach(m => {
+    if (e.target === m) {
+      m.style.display = "none";
+    }
+  });
+};
+
+/* =========================
+   LOOKBOOK: filtros simples
+   ========================= */
+(function(){
+  var galeria = document.getElementById('galeriaLooks');
+  if(!galeria) return; // si no estamos en la página de lookbook, salir
+
+  var botones = document.querySelectorAll('.lookbook-filtros .chip');
+  var items   = galeria.getElementsByClassName('look-item');
+
+  function activar(filtro){
+    // activar estado visual del chip
+    for(var i=0;i<botones.length;i++){
+      if(botones[i].getAttribute('data-filtro') === filtro){
+        botones[i].className = 'chip activo';
+      }else{
+        // mantener solo clase chip
+        botones[i].className = 'chip';
+      }
+    }
+    // mostrar/ocultar tarjetas según data-tags
+    for(var j=0;j<items.length;j++){
+      var tags = (items[j].getAttribute('data-tags') || '').toLowerCase();
+      if(filtro === 'todos' || tags.indexOf(filtro) !== -1){
+        items[j].className = items[j].className.replace(' look-oculto','');
+      }else{
+        if(items[j].className.indexOf('look-oculto') === -1){
+          items[j].className += ' look-oculto';
+        }
+      }
+    }
+  }
+
+  // eventos de los chips
+  for(var k=0;k<botones.length;k++){
+    botones[k].onclick = function(){
+      var f = this.getAttribute('data-filtro');
+      activar(f);
+    };
+  }
+})();

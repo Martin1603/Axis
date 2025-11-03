@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axis — Lookbook</title>
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Fuente (opcional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="contenedor">
+
+  <!-- ====== ENCABEZADO / NAV SUPERIOR (igual al tuyo) ====== -->
+  <header class="fila navbar">
+    <div class="col-lg-3 col-xs-6 nav-izq">
+      <button class="icono" id="btnMenu" aria-label="Menú">☰</button>
+      <button class="icono" id="btnBuscar" aria-label="Buscar">🔍</button>
+    </div>
+    <div class="col-lg-6 col-xs-12 nav-centro">
+      <a href="#" class="marca">axis</a>
+    </div>
+    <div class="col-lg-3 col-xs-6 nav-der xs-oculto"></div>
+  </header>
+
+  <!-- ====== MENÚ NAVEGACIÓN (igual al tuyo) ====== -->
+  <nav class="fila navegacion" id="navegacion">
+    <div class="col-lg-12 col-xs-12">
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Colecciones</a></li>
+        <li><a href="#">Lookbook</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">TyC</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ====== BUSCADOR (igual al tuyo) ====== -->
+  <section class="fila buscador" id="buscador">
+    <div class="col-lg-12 col-xs-12">
+      <input class="entrada" type="search" placeholder="Buscar productos, categorías…" />
+    </div>
+  </section>
+
+  <!-- =========================================================
+       LOOKBOOK — Galería con filtros, 4 col en desktop / 2 en móvil
+       ========================================================= -->
+  <!-- Título y descripción -->
+  <section class="fila lookbook-encabezado">
+    <div class="col-lg-12 col-xs-12">
+      <h1 class="look-titulo">Lookbook</h1>
+      <p class="look-texto">Inspírate con combinaciones reales: capas, texturas y siluetas Axis.</p>
+    </div>
+  </section>
+
+  <!-- Filtros (reutiliza tu estética de chips) -->
+  <nav class="fila lookbook-filtros">
+    <div class="col-lg-12 col-xs-12">
+      <ul class="chips">
+        <li><button class="chip activo" data-filtro="todos">Todos</button></li>
+        <li><button class="chip" data-filtro="urbano">Urbano</button></li>
+        <li><button class="chip" data-filtro="denim">Denim</button></li>
+        <li><button class="chip" data-filtro="neutros">Neutros</button></li>
+        <li><button class="chip" data-filtro="capsula">Cápsula</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Galería de looks -->
+<section class="fila lookbook-galeria" id="galeriaLooks">
+
+  <article class="col-lg-3 col-xs-6 look-item" data-tags="urbano neutros capsula">
+    <a href="images/gorra.png" class="look-card" target="_blank">
+      <div class="look-foto" style="background-image:url('images/gorra.png');"></div>
+      <div class="look-info">
+        <h3 class="look-nombre">Accesories</h3>
+        <p class="look-etiquetas">Urban</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="col-lg-3 col-xs-6 look-item" data-tags="denim capsula">
+    <a href="images/modelo8.png" class="look-card" target="_blank">
+      <div class="look-foto" style="background-image:url('images/modelo8.png');"></div>
+      <div class="look-info">
+        <h3 class="look-nombre">Total Denim Wide</h3>
+        <p class="look-etiquetas">Denim</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="col-lg-3 col-xs-6 look-item" data-tags="neutros">
+    <a href="images/modeloaxis.png" class="look-card" target="_blank">
+      <div class="look-foto" style="background-image:url('images/modeloaxis.png');"></div>
+      <div class="look-info">
+        <h3 class="look-nombre">AXIS hoodies</h3>
+        <p class="look-etiquetas">Neutros</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="col-lg-3 col-xs-6 look-item" data-tags="urbano denim">
+    <a href="images/modelos.png" class="look-card" target="_blank">
+      <div class="look-foto" style="background-image:url('images/modelos.png');"></div>
+      <div class="look-info">
+        <h3 class="look-nombre">Tailored and contemporary</h3>
+        <p class="look-etiquetas">Minimalist look</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="col-lg-3 col-xs-6 look-item" data-tags="capsula neutros">
+    <a href="images/tenis1.png" class="look-card" target="_blank">
+      <div class="look-foto" style="background-image:url('images/tenis1.png');"></div>
+      <div class="look-info">
+        <h3 class="look-nombre">Sneakers</h3>
+        <p class="look-etiquetas">Minimalist design for futuristic comfort.</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="col-lg-3 col-xs-6 look-item" data-tags="denim">
+    <a href="images/modelo10.png" class="look-card" target="_blank" >
+      <div class="look-foto" style="background-image:url('images/modelo10.png');"></div>
+      <div class="look-info">
+        <h3 class="look-nombre">Modern Bomber Jackets</h3>
+        <p class="look-etiquetas">A smooth, shiny finish that gives the jacket a premium touch.</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="col-lg-3 col-xs-6 look-item" data-tags="urbano">
+    <a href="images/bolso.png" class="look-card" target="_blank">
+      <div class="look-foto" style="background-image:url('images/bolso.png');"></div>
+      <div class="look-info">
+        <h3 class="look-nombre">Colaborations</h3>
+        <p class="look-etiquetas">The collaborative collection</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="col-lg-3 col-xs-6 look-item" data-tags="neutros denim">
+    <a href="images/merch.png" class="look-card" target="_blank">
+      <div class="look-foto" style="background-image:url('images/merch.png');"></div>
+      <div class="look-info">
+        <h3 class="look-nombre">AXIS Modern Essentials</h3>
+        <p class="look-etiquetas">This is a set of premium, minimalist everyday accessories.</p>
+      </div>
+    </a>
+  </article>
+
+</section>
+
+
+  <!-- ====== BANNER SIMPLE (igual al tuyo) ====== -->
+  <section class="fila">
+    <div class="col-lg-12 col-xs-12">
+      <div class="banner">
+        <p>ENVÍOS GRATIS desde $180.000 • Cambios 30 días • 3 y 6 cuotas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PIE ====== -->
+  <footer class="fila pie">
+    <div class="col-lg-4 col-xs-12">
+      <h4>Axis</h4>
+      <p>Ropa juvenil y moderna. Diseñada para moverse contigo.</p>
+    </div>
+    <div class="col-lg-4 col-xs-12">
+      <h4>Ayuda</h4>
+      <ul class="lista">
+        <li><a href="#">Envíos</a></li>
+        <li><a href="#">Cambios y devoluciones</a></li>
+        <li><a href="#">Términos</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-4 col-xs-12">
+      <h4>Suscríbete</h4>
+      <form class="boletin">
+        <input type="email" class="entrada" placeholder="Tu email" />
+        <button class="boton">Unirme</button>
+      </form>
+    </div>
+  </footer>
+
+</div>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+</body>
+</html>

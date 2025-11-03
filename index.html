@@ -8,39 +8,38 @@
   <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Fuente (opcional para look moderno, puedes quitarla si quieres) -->
+  <!-- Fuente opcional para look moderno -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Contenedor general, respeta tu grid de 12 columnas con floats -->
+<!-- Contenedor general (grid de 12 columnas con floats) -->
 <div class="contenedor">
 
   <!-- ====== ENCABEZADO / NAV SUPERIOR ====== -->
   <header class="fila navbar">
-    <!-- Columna izquierda: carrito + menú (☰) + lupa (🔍) -->
+    <!-- IZQUIERDA: menú (☰) + lupa (🔍) -->
     <div class="col-lg-3 col-xs-6 nav-izq">
       <button class="icono" id="btnMenu" aria-label="Menú">☰</button>
       <button class="icono" id="btnBuscar" aria-label="Buscar">🔍</button>
     </div>
 
-    <!-- Columna centro: marca (centrada por text-align center) -->
+    <!-- CENTRO: marca -->
     <div class="col-lg-6 col-xs-12 nav-centro">
       <a href="#" class="marca">axis</a>
     </div>
 
-    <!-- Columna derecha vacía: equilibra visualmente en desktop -->
+    <!-- DERECHA vacía solo para equilibrio en desktop -->
     <div class="col-lg-3 col-xs-6 nav-der xs-oculto"></div>
   </header>
 
-  <!-- ====== MENÚ DE NAVEGACIÓN CENTRADO ====== -->
-  <!-- En móvil se oculta por CSS y se muestra con JS al pulsar ☰ -->
+  <!-- ====== MENÚ DE NAVEGACIÓN ====== -->
   <nav class="fila navegacion" id="navegacion">
     <div class="col-lg-12 col-xs-12">
       <ul class="menu">
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Colecciones</a></li>
-        <li><a href="#">Lookbook</a></li>
+        <li><a href="lookbook.html" target="_blank" rel="noopener noreferrer">Lookbook</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Nosotros</a></li>
         <li><a href="#">Contacto</a></li>
@@ -50,29 +49,29 @@
     </div>
   </nav>
 
-  <!-- ====== BARRA DE BÚSQUEDA (se muestra/oculta con JS) ====== -->
+  <!-- ====== BARRA DE BÚSQUEDA (toggle con 🔍) ====== -->
   <section class="fila buscador" id="buscador">
     <div class="col-lg-12 col-xs-12">
       <input class="entrada" type="search" placeholder="Buscar productos, categorías…" />
     </div>
   </section>
 
-  <!-- ====== SECCIÓN PRINCIPAL (HERO) ====== -->
-  <!-- Es la “portada” con imagen de fondo, título y botón -->
+  <!-- ====== HERO / PORTADA ====== -->
   <section class="fila">
     <div class="col-lg-12 col-xs-12">
       <div class="hero">
-        <div class="hero-capa"></div> <!-- capa oscura para legibilidad -->
+        <div class="hero-capa"></div>
         <div class="hero-contenido">
           <h1 class="hero-titulo">Nueva cápsula</h1>
           <p class="hero-texto">Prendas esenciales. Siluetas amplias. Actitud urbana.</p>
-          <a href="#productos" class="boton boton-primario">Comprar ahora</a>
+          <!-- Abre en nueva pestaña -->
+          <a href="#productos" class="boton boton-primario" target="_blank" rel="noopener noreferrer">Comprar ahora</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== CATEGORÍAS (chips con scroll horizontal simple) ====== -->
+  <!-- ====== CATEGORÍAS ====== -->
   <nav class="fila categorias">
     <div class="col-lg-12 col-xs-12">
       <ul class="chips">
@@ -86,12 +85,10 @@
     </div>
   </nav>
 
-  <!-- ====== LISTA DE PRODUCTOS (4 en desktop / 2x2 en móvil) ====== -->
+  <!-- ====== PRODUCTOS ====== -->
   <main class="fila" id="productos">
-    <!-- Cada “article” es una tarjeta de producto -->
     <article class="col-lg-3 col-xs-6">
-      <a class="tarjeta" href="#">
-        <!-- Fondo con imagen: altura mayor y alineada arriba para no cortar la cabeza -->
+      <a class="tarjeta" href="images/modelo2.png" target="_blank">
         <div class="tarjeta-foto" style="background-image:url('images/modelo2.png');"></div>
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo">Sweater Axis Crudo</h3>
@@ -101,7 +98,7 @@
     </article>
 
     <article class="col-lg-3 col-xs-6">
-      <a class="tarjeta" href="#">
+      <a class="tarjeta" href="images/modelo3.png" target="_blank">
         <div class="tarjeta-foto" style="background-image:url('images/modelo3.png');"></div>
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo">Hoodie Oliva</h3>
@@ -111,7 +108,7 @@
     </article>
 
     <article class="col-lg-3 col-xs-6">
-      <a class="tarjeta" href="#">
+      <a class="tarjeta" href="images/modelo4.png" target="_blank">
         <div class="tarjeta-foto" style="background-image:url('images/modelo4.png');"></div>
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo">Hoodie Carbón</h3>
@@ -121,7 +118,7 @@
     </article>
 
     <article class="col-lg-3 col-xs-6">
-      <a class="tarjeta" href="#">
+      <a class="tarjeta" href="images/modelo5.png" target="_blank">
         <div class="tarjeta-foto" style="background-image:url('images/modelo5.png');"></div>
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo">Denim Wide Leg</h3>
@@ -131,7 +128,7 @@
     </article>
   </main>
 
-  <!-- ====== BANNER SIMPLE ====== -->
+  <!-- ====== BANNER ====== -->
   <section class="fila">
     <div class="col-lg-12 col-xs-12">
       <div class="banner">
@@ -165,7 +162,7 @@
 
 </div><!-- /contenedor -->
 
-<!-- Conectamos tu JS (carpeta js/script.js) -->
+<!-- JS -->
 <script src="js/script.js"></script>
 </body>
 </html>
