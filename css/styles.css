@@ -1,78 +1,206 @@
-*{
-	padding: 0px;
-	margin: 0px;
+/* ========= REINICIO BÁSICO ========= */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:"Inter", Arial, Helvetica, sans-serif; /* Fuente legible */
+  color:#0b0b0b;                                     /* Texto oscuro */
+  background:#ffffff;                                /* Fondo blanco */
+  line-height:1.35;                                  /* Altura de línea estándar */
+}
+a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
+
+/* ========= SISTEMA DE GRID (12 columnas con floats) ========= */
+/* Este es el sistema que te enseñó tu profe */
+.contenedor{position:relative;margin:auto;width:95%}
+.fila{position:relative;margin:auto;width:100%}
+.fila:after{content:"";display:block;clear:both}     /* Limpieza de floats */
+[class*="col-"]{float:left;padding:10px}             /* Columnas con padding */
+
+/* Anchos para pantallas grandes (desktop) */
+@media (min-width:1200px){
+  .col-lg-12{width:100%}
+  .col-lg-11{width:91.6666%}
+  .col-lg-10{width:83.3333%}
+  .col-lg-9{width:75%}
+  .col-lg-8{width:66.6666%}
+  .col-lg-7{width:58.3333%}
+  .col-lg-6{width:50%}
+  .col-lg-5{width:41.6666%}
+  .col-lg-4{width:33.3333%}
+  .col-lg-3{width:25%}
+  .col-lg-2{width:16.6666%}
+  .col-lg-1{width:8.3333%}
 }
 
-.contenedor{
-	position: relative;
-	margin: auto;
-	width: 95%;
-	height: auto;
+/* Anchos para pantallas pequeñas (móvil) */
+@media (max-width:768px){
+  .col-xs-12{width:100%}
+  .col-xs-6{width:50%} /* 2 productos por fila en móvil */
 }
 
-	/*Profe pues de aquí a abajo es como siguiendo el tutorial jajajaj*/
-
-
-.fila{
-	position: relative;
-	margin: auto;
-	width: 100%;
-	height: auto;
+/* ========= NAV SUPERIOR ========= */
+/* Barra de arriba: borde sutil y espacio */
+.navbar{
+  border-bottom:1px solid #efefef;
+  padding:8px 0;
 }
 
-[class*="col-"]{
-	padding: 0px;
-	float: left;
-	justify-content: center;
+/* lupa con estilo básico */
+.icono{
+  display:inline-block;          /* Que se alineen en línea */
+  width:42px;height:42px;        /* Tamaño del “botón” */
+  line-height:42px;              /* Centrar verticalmente el ícono */
+  text-align:center;             /* Centrar horizontalmente */
+  border:1px solid #eaeaea;      /* Borde sutil */
+  border-radius:10px;            /* Esquinas redondeadas */
+  background:#fff;               /* Fondo blanco */
+  margin-right:8px;              /* Separación entre íconos */
+}
+.icono:hover{background:#f6f6f6} /* Efecto hover sencillo */
+
+
+/* Centro del header: marca/Logo centrado */
+.nav-centro{text-align:center}
+.marca{
+  font-weight:800;
+  font-size:28px;
+  text-transform:lowercase;
 }
 
-/*pantalla grande */
-
-@media (min-width: 1200px) {
-  .col-lg-12 { width: 100%; }
-  .col-lg-11 { width: 91.666666%; }
-  .col-lg-10 { width: 83.333333%; }
-  .col-lg-9  { width: 75%; }
-  .col-lg-8  { width: 66.666666%; }
-  .col-lg-7  { width: 58.333333%; }
-  .col-lg-6  { width: 50%; }
-  .col-lg-5  { width: 41.666666%; }
-  .col-lg-4  { width: 33.333333%; }
-  .col-lg-3  { width: 25%; }
-  .col-lg-2  { width: 16.666666%; }
-  .col-lg-1  { width: 8.333333%; }
+/* En móvil, la columna derecha (vacía) se oculta para ahorrar espacio */
+.xs-oculto{display:block}
+@media (max-width:768px){
+  .xs-oculto{display:none}
 }
 
-
-/* pantallas pequeñas (celulares) */
-@media (max-width: 768px) {
-  .col-xs-12 { width: 100%; }
-  .col-xs-11 { width: 91.666666%; }
-  .col-xs-10 { width: 83.333333%; }
-  .col-xs-9  { width: 75%; }
-  .col-xs-8  { width: 66.666666%; }
-  .col-xs-7  { width: 58.333333%; }
-  .col-xs-6  { width: 50%; }
-  .col-xs-5  { width: 41.666666%; }
-  .col-xs-4  { width: 33.333333%; }
-  .col-xs-3  { width: 25%; }
-  .col-xs-2  { width: 16.666666%; }
-  .col-xs-1  { width: 8.333333%; }
-
-
+/* ========= MENÚ DE NAVEGACIÓN (centrado) ========= */
+/* Por defecto lo ocultamos: en móvil se abrirá con JS y en desktop con media query se muestra */
+.navegacion{
+  display:none;                   /* Oculto inicialmente (móvil) */
+  padding:6px 0;
+  border-bottom:1px solid #f2f2f2;
 }
- 
+.navegacion.abierto{display:block}/* Clase que se añade con JS para mostrarlo */
 
-.imagenFondo{
-
-	background-image: url("../images/imagen1.jpg");
-	background-size: cover;        /* Ajusta la imagen al tamaño del div */
-  background-position: center;   /* Centra la imagen */
-  background-repeat: no-repeat;  /* Evita que se repita */
-  width: 100%;
-  height: 90vh;                  /* Ocupa el 90% de la pantalla */
+.menu{list-style:none;text-align:center}
+.menu li{display:inline-block;margin:6px 10px}
+.menu a{
+  display:inline-block;
+  padding:8px 10px;
+  border:1px solid #ededed;
+  border-radius:999px;
+  background:#f7f7f7;
+  font-weight:600;
+  font-size:14px;
 }
 
-#blanco{
-	background-color: white;
+/* En desktop, el menú se muestra siempre y el botón ☰ se oculta */
+@media (min-width:1200px){
+  .navegacion{display:block}     /* visible siempre en grandes */
+  #btnMenu{display:none}         /* ocultamos el botón ☰ en grandes */
 }
+
+/* ========= BARRA DE BÚSQUEDA ========= */
+/* Siempre oculta hasta que se pulse la lupa */
+.buscador{display:none;padding-top:8px}
+.buscador.abierto{display:block}
+.entrada{
+  width:100%;
+  height:42px;
+  border:1px solid #e7e7e7;
+  border-radius:10px;
+  padding:0 12px;
+  background:#fff;
+}
+
+/* ========= SECCIÓN HERO (portada) ========= */
+/* Imagen de fondo grande con texto encima */
+.hero{
+  position:relative;                           /* Para posicionar el texto dentro */
+  height:420px;                                /* Alto fijo sencillo */
+  border-radius:18px;
+  overflow:hidden;                             /* Oculta desbordes de la imagen */
+  background-image:url("../images/fondo1.jpg");/* Cambia por tu imagen */
+  background-size:cover;                       /* Cubre el espacio */
+  background-position:center;                  /* Centrada por defecto */
+}
+.hero-capa{
+  position:absolute;left:0;top:0;right:0;bottom:0; /* Capa que cubre el hero */
+  background:rgba(0,0,0,.35);                      /* Oscurece para legibilidad */
+}
+.hero-contenido{
+  position:absolute;left:24px;bottom:24px;right:24px; /* Texto dentro del hero */
+  color:#fff;
+  max-width:600px;
+}
+.hero-titulo{font-size:32px;font-weight:700;margin-bottom:6px}
+.hero-texto{opacity:.95;margin-bottom:14px}
+.boton{
+  display:inline-block;
+  border:1px solid #0b0b0b;
+  border-radius:999px;
+  padding:10px 18px;
+  font-weight:600;
+  background:#fff;               /* Botón claro por defecto */
+}
+.boton-primario{background:#0b0b0b;color:#fff} /* Botón oscuro */
+
+/* ========= CATEGORÍAS (chips con scroll) ========= */
+.categorias{margin-top:10px}
+.chips{
+  list-style:none;
+  white-space:nowrap;            /* Mantiene en una línea y permite scroll */
+  overflow-x:auto;
+  padding:6px;
+}
+.chips li{display:inline-block;margin-right:8px}
+.chip{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:999px;
+  background:#f4f4f4;
+  border:1px solid #ededed;
+  font-weight:600;
+}
+.chip.activo{background:#0b0b0b;color:#fff;border-color:#0b0b0b}
+
+/* ========= TARJETAS DE PRODUCTO ========= */
+#productos [class*="col-"]{padding:10px}
+
+.tarjeta{
+  display:block;
+  border:1px solid #efefef;
+  border-radius:16px;
+  background:#fff;
+  overflow:hidden;
+}
+
+/* FOTO DE PRODUCTO: 
+.tarjeta-foto{
+  height:460px;                    /* << más alto que antes */
+  background-size:cover;           /* Ajusta sin deformar */
+  background-position:top center;  /* << alinear arriba para evitar cortar cuello */
+  background-color:#f6f6f6;        /* Color de respaldo si no carga imagen */
+}
+
+.tarjeta-cuerpo{padding:12px}
+.tarjeta-titulo{font-size:14px;font-weight:600;margin-bottom:4px}
+.precio{font-weight:700}
+
+/* ========= BANNER SIMPLE ========= */
+.banner{
+  text-align:center;
+  border:1px dashed #e8e8e8;
+  border-radius:14px;
+  padding:14px;
+  margin-top:6px;
+  background:#fafafa;
+  font-weight:600;
+}
+
+/* ========= PIE DE PÁGINA ========= */
+.pie{margin-top:20px;padding:16px 0;border-top:1px solid #efefef}
+.pie h4{font-size:16px;margin-bottom:8px}
+.lista{list-style:none}
+.lista li+li{margin-top:6px}
+.boletin .entrada{width:auto;min-width:180px}
