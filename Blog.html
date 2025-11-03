@@ -9,32 +9,150 @@
 
 <body>
 	<div class="contenedor">
-		<header class="fila Slide">
-			<ul>
-				<li><img src="images/slide1.png"></li>
-				<li><img src="images/slide2.png"></li>
-				<li><img src="images/slide2.png"></li>
-				<li><img src="images/slide2.png"></li>
-				<li><img src="images/slide2.png"></li>
-			</ul>
+		<header class="fila navbar">
+		    <!-- Columna izquierda: carrito + menú (☰) + lupa (🔍) -->
+		    <div class="col-lg-3 col-xs-6 nav-izq">
+		      <button class="icono" id="btnMenu" aria-label="Menú">☰</button>
+		      <button class="icono" id="btnBuscar" aria-label="Buscar">🔍</button>
+		    </div>
+
+		    <!-- Columna centro: marca (centrada por text-align center) -->
+		    <div class="col-lg-6 col-xs-12 nav-centro">
+		      <a href="#" class="marca">axis</a>
+		    </div>
+
+		    <!-- Columna derecha vacía: equilibra visualmente en desktop -->
+		    <div class="col-lg-3 col-xs-6 nav-der xs-oculto"></div>
 		</header>
-		
-		<nav class="fila">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                <input type="checkbox" id="menu-toggle">
-                <labeL for="menu-toggle" class="menu-icono">&#9776;</label>
-                <ul class="menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="colecciones.html">Colecciones</a></li>
-                    <li><a href="lookbook.html">LookBook</a></li>
-                    <li><a href="Blog.html">Blog</a></li>
-                    <li><a href="Nosotros.html">Nosotros</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="FAQ.html">FAQ</a></li>
-                    <li><a href="Terminos.html">Términos y condiciones</a></li>
-                </ul>
-            </div>
-        </nav>
+
+		  <!-- ====== MENÚ DE NAVEGACIÓN CENTRADO ====== -->
+		  <!-- En móvil se oculta por CSS y se muestra con JS al pulsar ☰ -->
+		<nav class="fila navegacion" id="navegacion">
+		    <div class="col-lg-12 col-xs-12">
+		      <ul class="menu">
+		      	<li><a href="#">Inicio</a></li>
+		        <li><a href="#">Colecciones</a></li>
+		        <li><a href="#">Lookbook</a></li>
+		        <li><a href="#">Blog</a></li>
+		        <li><a href="#">Nosotros</a></li>
+		        <li><a href="#">Contacto</a></li>
+		        <li><a href="#">FAQ</a></li>
+		        <li><a href="#">TyC</a></li>
+		      </ul>
+		    </div>
+		</nav>
+
+	    <!-- ====== SECCIÓN BLOG ====== -->
+	    <section class="fila blog">
+
+	      <!-- Título -->
+	      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog-header">
+	        <h2 class="blog-titulo">Nuestro Blog</h2>
+	        <p class="blog-descripcion">
+	          Descubre lo último en tendencias, estilos y colores que marcarán la temporada. 
+	          Explora consejos de moda y novedades de nuestra marca.
+	        </p>
+	      </div>
+
+	      <!-- ====== SLIDER SEGÚN TU CSS ====== -->
+	      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	        <section class="Slide">
+	          <ul>
+	            <li><img src="images/slider1.png" alt="Colección urbana"></li>
+	            <li><img src="images/slide2.jpg" alt="Moda sostenible"></li>
+	            <li><img src="images/slide3.jpg" alt="Tendencias 2025"></li>
+	            <li><img src="images/slide4.jpg" alt="Estilo minimalista"></li>
+	            <li><img src="images/slide5.jpg" alt="Colección streetwear"></li>
+	          </ul>
+	        </section>
+	      </div>
+
+	      <!-- ====== GALERÍA DE 4 IMÁGENES ====== -->
+	      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 blog-img">
+	        <div class="blog-card" style="background-image: url('images/blog1.jpg');"></div>
+	      </div>
+	      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 blog-img">
+	        <div class="blog-card" style="background-image: url('images/blog2.jpg');"></div>
+	      </div>
+	      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 blog-img">
+	        <div class="blog-card" style="background-image: url('images/blog3.jpg');"></div>
+	      </div>
+	      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 blog-img">
+	        <div class="blog-card" style="background-image: url('images/blog4.jpg');"></div>
+	      </div>
+
+	      <!-- ====== SLIDER DE NOTICIAS ====== -->
+	      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog-slider">
+	        <div class="slider">
+	          <div class="slide activo">
+	            <h3>Paleta de colores 2025</h3>
+	            <p>Las tonalidades neutras con acentos vibrantes serán la clave esta temporada.</p>
+	            <button class="boton" onclick="abrirModal(1)">Leer más</button>
+	          </div>
+	          <div class="slide">
+	            <h3>Streetwear en ascenso</h3>
+	            <p>El estilo urbano continúa dominando las calles con prendas oversize y textiles ligeros.</p>
+	            <button class="boton" onclick="abrirModal(2)">Leer más</button>
+	          </div>
+	          <div class="slide">
+	            <h3>Materiales sostenibles</h3>
+	            <p>La moda responsable no es una tendencia: es el futuro. Conoce nuestros procesos eco.</p>
+	            <button class="boton" onclick="abrirModal(3)">Leer más</button>
+	          </div>
+	        </div>
+	        <div class="slider-controles">
+	          <button class="boton-slider prev">◀</button>
+	          <button class="boton-slider next">▶</button>
+	        </div>
+	      </div>
+	    </section>
+
+	    <!-- ====== MODALES ====== -->
+	    <div id="modal1" class="modal">
+	      <div class="modal-contenido">
+	        <span class="cerrar" onclick="cerrarModal(1)">&times;</span>
+	        <h3>Paleta de colores 2025</h3>
+	        <p>Los tonos tierra, el beige y los acentos azules dominan las pasarelas. Esta combinación aporta calma y equilibrio, perfecta para looks minimalistas con toques vibrantes.</p>
+	      </div>
+	    </div>
+
+	    <div id="modal2" class="modal">
+	      <div class="modal-contenido">
+	        <span class="cerrar" onclick="cerrarModal(2)">&times;</span>
+	        <h3>Streetwear en ascenso</h3>
+	        <p>Las prendas oversize, joggers y chaquetas bomber se mezclan con accesorios deportivos para un estilo libre, cómodo y sofisticado.</p>
+	      </div>
+	    </div>
+
+	    <div id="modal3" class="modal">
+	      <div class="modal-contenido">
+	        <span class="cerrar" onclick="cerrarModal(3)">&times;</span>
+	        <h3>Materiales sostenibles</h3>
+	        <p>Nuestros procesos reducen el uso de agua y utilizan tejidos reciclados, impulsando una industria más consciente y responsable.</p>
+	      </div>
+	    </div>
+		<footer class="fila pie">
+		    <div class="col-lg-4 col-xs-12">
+		      <h4>Axis</h4>
+		      <p>Ropa juvenil y moderna. Diseñada para moverse contigo.</p>
+		    </div>
+		    <div class="col-lg-4 col-xs-12">
+		      <h4>Ayuda</h4>
+		      <ul class="lista">
+		        <li><a href="#">Envíos</a></li>
+		        <li><a href="#">Cambios y devoluciones</a></li>
+		        <li><a href="#">Términos</a></li>
+		      </ul>
+		    </div>
+		    <div class="col-lg-4 col-xs-12">
+		      <h4>Suscríbete</h4>
+		      <form class="boletin">
+		        <input type="email" class="entrada" placeholder="Tu email" />
+		        <button class="boton">Unirme</button>
+		      </form>
+		    </div>
+		</footer>
 	</div>
+	<script src="js/script.js"></script>
 </body>
 </html>
