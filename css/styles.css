@@ -287,4 +287,44 @@ ordenen en forma de columna, o sea, vertical */
   text-decoration: underline;
 }
 
+/* ====== COLECCIONES ====== */
+.colecciones {
+  margin: 80px auto;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.colecciones h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.colecciones p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.03);
+}
+
+
 /* Fin clases Hedwins */
