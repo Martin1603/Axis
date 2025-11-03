@@ -9,14 +9,13 @@ body{
 }
 a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
 
-/* ========= SISTEMA DE GRID (12 columnas con floats) ========= */
-/* Este es el sistema que te enseñó tu profe */
+
 .contenedor{position:relative;margin:auto;width:95%}
 .fila{position:relative;margin:auto;width:100%}
 .fila:after{content:"";display:block;clear:both}     /* Limpieza de floats */
 [class*="col-"]{float:left;padding:10px}             /* Columnas con padding */
 
-/* Anchos para pantallas grandes (desktop) */
+
 @media (min-width:1200px){
   .col-lg-12{width:100%}
   .col-lg-11{width:91.6666%}
@@ -32,14 +31,12 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   .col-lg-1{width:8.3333%}
 }
 
-/* Anchos para pantallas pequeñas (móvil) */
 @media (max-width:768px){
   .col-xs-12{width:100%}
   .col-xs-6{width:50%} /* 2 productos por fila en móvil */
 }
 
 /* ========= NAV SUPERIOR ========= */
-/* Barra de arriba: borde sutil y espacio */
 .navbar{
   border-bottom:1px solid #efefef;
   padding:8px 0;
@@ -65,21 +62,6 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   font-weight:800;
   font-size:28px;
   text-transform:lowercase;
-}
-/*PANTALLAS MEDIANAS - md*/
-@media(max-width: 1199px) and (min-width: 992px){
-    .col-md-12{width: 100%;}
-    .col-md-11{width: 91.66666667%;}
-    .col-md-10{width: 83.33333333%;}
-    .col-md-9{width: 75%;}
-    .col-md-8{width: 66.66666667%;}
-    .col-md-7{width: 58.33333333%;}
-    .col-md-6{width: 50%;}
-    .col-md-5{width: 41.66666667%;}
-    .col-md-4{width: 33.33333333%;}
-    .col-md-3{width: 25%;}
-    .col-md-2{width: 16.66666667%;}
-    .col-md-1{width: 8.33333333%;}
 }
 
 @media (min-width: 576px) and (max-width: 991px) {
@@ -225,10 +207,8 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
 .chip.activo{background:#0b0b0b;color:#fff;border-color:#0b0b0b}
 
 /* ========= TARJETAS DE PRODUCTO ========= */
-/* 4 por fila en desktop (col-lg-3) y 2 por fila en móvil (col-xs-6) */
 #productos [class*="col-"]{padding:10px}
 
-/* Tarjeta simple con borde y fondo blanco */
 .tarjeta{
   display:block;
   border:1px solid #efefef;
@@ -237,9 +217,7 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   overflow:hidden;
 }
 
-/* FOTO DE PRODUCTO: 
-   - Aumentamos la altura a 460px para que se vea más del cuerpo
-   - Alineamos la imagen desde ARRIBA para no cortar la cabeza (top center) */
+/* FOTO DE PRODUCTO: */ 
 .tarjeta-foto{
   height:460px;                    /* << más alto que antes */
   background-size:cover;           /* Ajusta sin deformar */
@@ -268,6 +246,8 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
 .lista{list-style:none}
 .lista li+li{margin-top:6px}
 .boletin .entrada{width:auto;min-width:180px}
+<<<<<<< HEAD
+=======
 
 .Slide{
     width: 100%;
@@ -306,8 +286,56 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
     95%{margin-left: -400%;}
 }
 
+ /* ====== LOOKBOOK santi ====== */
 
-/* martin */
+/* Encabezado simple */
+.lookbook-encabezado { margin-top: 14px; }
+.look-titulo{
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.look-texto{
+  color:#444;
+  font-size:14px;
+}
+
+/* Filtros: reutilizamos chips; solo ajusto separación */
+.lookbook-filtros { margin-top: 8px; }
+.lookbook-filtros .chips { padding: 4px 6px; }
+
+/* Galería */
+.lookbook-galeria { margin-top: 8px; }
+
+/* Tarjeta del look (sin cambiar tus tarjetas de producto) */
+.look-card{
+  display:block;
+  border:1px solid #efefef;
+  border-radius:16px;
+  background:#fff;
+  overflow:hidden;
+}
+
+/* Foto del look: similar a producto, un poco más alta */
+.look-foto{
+  height:520px;                 /* alto generoso para ver el outfit completo */
+  background-size:cover;
+  background-position:center;   /* puedes usar top center si tu foto lo requiere */
+  background-color:#f3f3f3;
+}
+
+/* Info del look: título y etiquetas */
+.look-info{ padding:12px }
+.look-nombre{ font-size:14px; font-weight:700; margin-bottom:4px }
+.look-etiquetas{ font-size:12px; color:#666 }
+
+/* Estado oculto por filtro (simple) */
+.look-oculto{ display:none !important }
+
+
+/* MARTIN */
 
 .blog {
   margin-top: 40px;
@@ -725,5 +753,6 @@ ordenen en forma de columna, o sea, vertical */
 
 
 /* Fin clases Hedwins */
+>>>>>>> origin/martin
 
 

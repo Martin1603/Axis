@@ -8,33 +8,33 @@
   <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Fuente (opcional para look moderno, puedes quitarla si quieres) -->
+  <!-- Fuente opcional para look moderno -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Contenedor general, respeta tu grid de 12 columnas con floats -->
+<!-- Contenedor general (grid de 12 columnas con floats) -->
 <div class="contenedor">
 
   <!-- ====== ENCABEZADO / NAV SUPERIOR ====== -->
   <header class="fila navbar">
-    <!-- Columna izquierda: carrito + menú (☰) + lupa (🔍) -->
+    <!-- IZQUIERDA: menú (☰) + lupa (🔍) -->
     <div class="col-lg-3 col-xs-6 nav-izq">
       <button class="icono" id="btnMenu" aria-label="Menú">☰</button>
       <button class="icono" id="btnBuscar" aria-label="Buscar">🔍</button>
     </div>
 
-    <!-- Columna centro: marca (centrada por text-align center) -->
+    <!-- CENTRO: marca -->
     <div class="col-lg-6 col-xs-12 nav-centro">
       <a href="#" class="marca">axis</a>
     </div>
 
-    <!-- Columna derecha vacía: equilibra visualmente en desktop -->
+    <!-- DERECHA vacía solo para equilibrio en desktop -->
     <div class="col-lg-3 col-xs-6 nav-der xs-oculto"></div>
   </header>
 
-  <!-- ====== MENÚ DE NAVEGACIÓN CENTRADO ====== -->
-  <!-- En móvil se oculta por CSS y se muestra con JS al pulsar ☰ -->
+  <!-- ====== MENÚ DE NAVEGACIÓN ====== -->
+  <!-- En móvil: oculto; en desktop: visible. En móvil se abre con ☰ -->
   <nav class="fila navegacion" id="navegacion">
     <div class="col-lg-12 col-xs-12">
       <ul class="menu">
@@ -50,15 +50,14 @@
     </div>
   </nav>
 
-  <!-- ====== BARRA DE BÚSQUEDA (se muestra/oculta con JS) ====== -->
+  <!-- ====== BARRA DE BÚSQUEDA (toggle con 🔍) ====== -->
   <section class="fila buscador" id="buscador">
     <div class="col-lg-12 col-xs-12">
       <input class="entrada" type="search" placeholder="Buscar productos, categorías…" />
     </div>
   </section>
 
-  <!-- ====== SECCIÓN PRINCIPAL (HERO) ====== -->
-  <!-- Es la “portada” con imagen de fondo, título y botón -->
+  <!-- ====== HERO / PORTADA ====== -->
   <section class="fila">
     <div class="col-lg-12 col-xs-12">
       <div class="hero">
@@ -72,7 +71,7 @@
     </div>
   </section>
 
-  <!-- ====== CATEGORÍAS (chips con scroll horizontal simple) ====== -->
+  <!-- ====== CATEGORÍAS (chips con scroll horizontal) ====== -->
   <nav class="fila categorias">
     <div class="col-lg-12 col-xs-12">
       <ul class="chips">
@@ -86,12 +85,10 @@
     </div>
   </nav>
 
-  <!-- ====== LISTA DE PRODUCTOS (4 en desktop / 2x2 en móvil) ====== -->
+  <!-- ====== PRODUCTOS (4 en desktop / 2×2 en móvil) ====== -->
   <main class="fila" id="productos">
-    <!-- Cada “article” es una tarjeta de producto -->
     <article class="col-lg-3 col-xs-6">
       <a class="tarjeta" href="#">
-        <!-- Fondo con imagen: altura mayor y alineada arriba para no cortar la cabeza -->
         <div class="tarjeta-foto" style="background-image:url('images/modelo2.png');"></div>
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo">Sweater Axis Crudo</h3>
@@ -131,7 +128,7 @@
     </article>
   </main>
 
-  <!-- ====== BANNER SIMPLE ====== -->
+  <!-- ====== BANNER ====== -->
   <section class="fila">
     <div class="col-lg-12 col-xs-12">
       <div class="banner">
@@ -165,7 +162,7 @@
 
 </div><!-- /contenedor -->
 
-<!-- Conectamos tu JS (carpeta js/script.js) -->
+<!-- Tu JS -->
 <script src="js/script.js"></script>
 </body>
 </html>

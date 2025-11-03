@@ -123,6 +123,48 @@ window.onclick = function(e) {
   });
 };
 
+/* =========================
+   LOOKBOOK: filtros simples
+   ========================= */
+(function(){
+  var galeria = document.getElementById('galeriaLooks');
+  if(!galeria) return; // si no estamos en la página de lookbook, salir
+
+  var botones = document.querySelectorAll('.lookbook-filtros .chip');
+  var items   = galeria.getElementsByClassName('look-item');
+
+  function activar(filtro){
+    // activar estado visual del chip
+    for(var i=0;i<botones.length;i++){
+      if(botones[i].getAttribute('data-filtro') === filtro){
+        botones[i].className = 'chip activo';
+      }else{
+        // mantener solo clase chip
+        botones[i].className = 'chip';
+      }
+    }
+    // mostrar/ocultar tarjetas según data-tags
+    for(var j=0;j<items.length;j++){
+      var tags = (items[j].getAttribute('data-tags') || '').toLowerCase();
+      if(filtro === 'todos' || tags.indexOf(filtro) !== -1){
+        items[j].className = items[j].className.replace(' look-oculto','');
+      }else{
+        if(items[j].className.indexOf('look-oculto') === -1){
+          items[j].className += ' look-oculto';
+        }
+      }
+    }
+  }
+
+  // eventos de los chips
+  for(var k=0;k<botones.length;k++){
+    botones[k].onclick = function(){
+      var f = this.getAttribute('data-filtro');
+      activar(f);
+    };
+  }
+})();
+
 // ====== FUNCIONALIDAD FAQ ======
 document.querySelectorAll('.faq-pregunta').forEach((btn) => {
   btn.addEventListener('click', () => {
