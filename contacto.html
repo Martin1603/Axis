@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axis — Contacto</title>
+
+  <!-- Linkeando hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+  <!-- Parte superior de la página -->
+
+  <header class="fila navbar">
+    <div class="col-lg-3 col-xs-6 nav-izq">
+
+      <button class="icono" id="btnMenu" aria-label="Menú">☰</button>
+      <button class="icono" id="btnBuscar" aria-label="Buscar">🔍</button>
+
+    </div>
+
+    <div class="col-lg-6 col-xs-12 nav-centro">
+
+      <a href="index.html" class="marca">axis</a>
+
+    </div>
+
+    <div class="col-lg-3 col-xs-6 nav-der xs-oculto"></div>
+
+  </header>
+
+  <!--  MENÚ DE NAVEGACIÓN  -->
+
+  <nav class="fila navegacion" id="navegacion">
+
+    <div class="col-lg-12 col-xs-12">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Colecciones</a></li>
+        <li><a href="#">Lookbook</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="contacto.html" class="chip activo">Contacto</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">TyC</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- Imagen Cabezote -->
+  <section class="fila">
+    <div class="col-lg-12 col-xs-12">
+      <div class="hero" style="background-image:url('images/contacto-bg.jpg')">
+        <div class="hero-capa"></div>
+        <div class="hero-contenido">
+          <h1 class="hero-titulo">Contáctanos</h1>
+          <p class="hero-texto">¿Tienes preguntas, colaboraciones o comentarios? Escríbenos, queremos escucharte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  FORMULARIO E INFORMACIÓN  -->
+
+  <main class="fila contacto">
+    <div class="col-lg-6 col-xs-12">
+      <h2>Envíanos un mensaje</h2>
+
+        <!--  Acá usamos la etiquta de Form la cual permite crear formularios, Form es el contenedor principal, label es para indicar el nombre, input es en donde el usuario va a escribir en donde placeholder es como un texto guía
+
+        Además mirar como cada input tiene su Type, esto para indicar si el campo que se debe ingresar es un texto, un email, etc. Para que luego al llenar por ejemplo un campo de email, pida obligatoriamente el "@"  -->
+
+      <form>
+        <label>Nombre</label>
+        <input type="text" class="entrada" placeholder="Tu nombre" required>
+
+        <label>Correo electrónico</label>
+        <input type="email" class="entrada" placeholder="nombre@correo.com" required>
+
+        <label>Mensaje</label>
+        <textarea class="entrada" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+        <button type="submit" class="boton boton-primario">Enviar</button>
+      </form>
+
+    </div>
+
+
+  <!--  FORMULARIO E INFORMACIÓN  -->
+
+    <div class="col-lg-6 col-xs-12">
+      
+      <h2>Información de contacto</h2>
+      
+      <p>
+            Puedes comunicarte con nuestro equipo de atención al cliente para resolver tus dudas o recibir asistencia personalizada.
+      </p>
+      
+      <ul class="info">
+
+        <li>📍 Medellín, Colombia</li>
+        <li>✉️ contacto@axis.com</li>
+        <li>📞 +57 304 323 8875</li>
+        <li>🕐 Lunes a viernes: 9:00 – 18:00</li>
+
+      </ul>
+
+    </div>
+
+  </main>
+
+
+  <!-- ====== BANNER ====== -->
+
+  <section class="fila">
+    <div class="col-lg-12 col-xs-12">
+      <div class="banner">
+        <p>ENVÍOS GRATIS desde $180.000 • Cambios 30 días • 3 y 6 cuotas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PIE DE PÁGINA ====== -->
+
+  <footer class="fila pie">
+    <div class="col-lg-4 col-xs-12">
+      <h4>Axis</h4>
+      <p>Ropa juvenil y moderna. Diseñada para moverse contigo.</p>
+    </div>
+    <div class="col-lg-4 col-xs-12">
+      <h4>Ayuda</h4>
+      <ul class="lista">
+        <li><a href="#">Envíos</a></li>
+        <li><a href="#">Cambios y devoluciones</a></li>
+        <li><a href="#">Términos</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-4 col-xs-12">
+      <h4>Suscríbete</h4>
+      <form class="boletin">
+        <input type="email" class="entrada" placeholder="Tu email" />
+        <button class="boton">Unirme</button>
+      </form>
+    </div>
+  </footer>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
