@@ -67,6 +67,51 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   text-transform:lowercase;
 }
 
+@media (min-width: 576px) and (max-width: 991px) {
+  .col-sm-12 { width: 100%; }
+  .col-sm-6  { width: 50%; } /* dos columnas en small */
+  /* por si usas otras clases sm */
+  .col-sm-4  { width: 33.3333%; }
+  .col-sm-3  { width: 25%; }
+}
+
+/* Extra-small: <=575px -> todas las columnas ocupan 100% (apiladas) */
+@media (max-width: 575px) {
+  /* Forzar que TODAS las "col-" ocupen 100% para evitar problemas de float */
+  [class*="col-"] {
+    width: 100% !important;
+  }
+}
+
+/* ===== Slider de noticias: mostrar / ocultar slides correctamente ===== */
+/* Reemplaza la lógica de opacity por display para evitar "espacios en blanco" */
+.blog-slider .slider { display:block; position:relative; }
+.blog-slider .slide {
+  display: none;               /* ocultas por defecto (no ocupan espacio) */
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 12px;
+  background: #f8f8f8;
+}
+.blog-slider .slide.activo {
+  display: block;              /* sólo la activa ocupa espacio y se ve */
+  animation: fadeIn 0.35s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste: altura automática para evitar huecos si contenido variable */
+.blog-slider .slider { min-height: 1px; }
+
+/* (Opcional) Asegura que controles no se solapen en móvil */
+@media (max-width: 575px) {
+  .slider-controles { top: auto; bottom: 8px; transform: none; }
+  .boton-slider { width: 40px; height: 40px; }
+}
+
 /* En móvil, la columna derecha (vacía) se oculta para ahorrar espacio */
 .xs-oculto{display:block}
 @media (max-width:768px){
@@ -204,3 +249,288 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
 .lista{list-style:none}
 .lista li+li{margin-top:6px}
 .boletin .entrada{width:auto;min-width:180px}
+<<<<<<< HEAD
+=======
+
+.Slide{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.Slide ul{
+    display: flex;
+    width: 500%;
+    padding: 0px;
+    animation: movimiento 20s infinite;
+    animation-direction: alternate-reverse;
+}
+.Slide ul li{
+    width: 100%;
+    list-style: none;
+}
+.Slide ul li img{
+    width: 100%;
+    height: 300px;
+}
+@keyframes movimiento{
+    0%{margin-left: 0%;}
+    15%{margin-left: 0%;}
+
+    20%{margin-left: -100%;}
+    35%{margin-left: -100%;}
+
+    40%{margin-left: -200%;}
+    55%{margin-left: -200%;}
+
+    60%{margin-left: -300%;}
+    75%{margin-left: -300%;}
+
+    80%{margin-left: -400%;}
+    95%{margin-left: -400%;}
+}
+
+
+/* martin */
+
+.blog {
+  margin-top: 40px;
+  text-align: center;
+}
+.blog-titulo {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.blog-descripcion {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ====== Tarjetas de blog ====== */
+.blog-card {
+  height: 260px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #eaeaea;
+  transition: transform 0.3s ease;
+}
+.blog-card:hover {
+  transform: scale(1.03);
+}
+
+/* ====== SLIDER DE NOTICIAS ====== */
+.blog-slider {
+  position: relative;
+  margin-top: 40px;
+  overflow: hidden;
+}
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 30px 20px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.slide.activo {
+  opacity: 1;
+  transform: scale(1);
+}
+.slide h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.slide p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* ====== Botones del slider ====== */
+.slider-controles {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.boton-slider {
+  pointer-events: all;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.boton-slider:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* ====== MODALES ====== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 90px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-contenido {
+  background-color: #fff;
+  margin: auto;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  animation: aparecer 0.3s ease;
+}
+.modal-contenido h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.modal-contenido p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.cerrar {
+  color: #aaa;
+  float: right;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cerrar:hover {
+  color: #000;
+}
+@keyframes aparecer {
+  from {transform: translateY(-20px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* PAGINA DE CONTACTO HEDWINS  */
+
+.contacto {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Heredamos de la clase contacto */
+.contacto h2 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+/* Usamos flex-direction: column para que los elementos que haga se 
+ordenen en forma de columna, o sea, vertical */
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contacto label {
+  font-weight: 600;
+}
+
+.contacto textarea {
+  font-family: "Inter", sans-serif;
+}
+
+/* Lista de info de contacto */
+.info {
+  list-style: none;
+  margin-top: 16px;
+  line-height: 1.8;
+}
+
+/* TERMINOS Y CONDICIONES (Hedwins) */
+
+.terminos {
+  max-width: 900px;
+  margin: 80px auto;
+  line-height: 1.6;
+}
+
+.terminos h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.terminos p {
+  font-size: 15px;
+  margin-bottom: 18px;
+  color: #333;
+}
+
+.terminos a {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* ====== COLECCIONES ====== */
+.colecciones {
+  margin: 80px auto;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.colecciones h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.colecciones p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.03);
+}
+
+
+/* Fin clases Hedwins */
+>>>>>>> origin/martin
