@@ -367,7 +367,7 @@ a{text-decoration:none;color:inherit}                /* Enlaces sin subrayar */
   margin: 0 auto 20px;
   color: #444;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.5; /* genera un tamaño de linea, haciendo que haya mas espacio entre renglones*/
 }
 
 /* ====== Tarjetas de blog ====== */
