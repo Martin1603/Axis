@@ -744,14 +744,14 @@ ordenen en forma de columna, o sea, vertical */
 }
 
 .coleccion h2 {
-  font-size: 32px;
+  font-size: 50px;
   margin-bottom: 30px;
 }
 
 /*  IMAGENES */
 .galeria {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
   width: 100%;
 }
